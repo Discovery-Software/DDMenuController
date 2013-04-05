@@ -436,6 +436,10 @@
 }
 
 - (void)showRootController:(BOOL)animated {
+    [self showRootController:animated completion:nil];
+}
+
+- (void)showRootController:(BOOL)animated completion:(dispatch_block_t)completion {
     
     [_tap setEnabled:NO];
     _root.view.userInteractionEnabled = YES;
@@ -467,6 +471,8 @@
 
         [self showShadow:NO];
         
+        if (completion) completion();
+        
     }];
     
     if (!animated) {
@@ -476,6 +482,10 @@
 }
 
 - (void)showLeftController:(BOOL)animated {
+    [self showLeftController:animated completion:nil];
+}
+
+- (void)showLeftController:(BOOL)animated completion:(dispatch_block_t)completion {
     if (!_menuFlags.canShowLeft) return;
     
     if (_right && _right.view.superview) {
@@ -509,6 +519,7 @@
         _root.view.frame = frame;
     } completion:^(BOOL finished) {
         [_tap setEnabled:YES];
+        if (completion) completion();
     }];
     
     if (!animated) {
@@ -518,6 +529,10 @@
 }
 
 - (void)showRightController:(BOOL)animated {
+    [self showRightController:animated completion:nil];
+}
+
+- (void)showRightController:(BOOL)animated completion:(dispatch_block_t)completion {
     if (!_menuFlags.canShowRight) return;
     
     if (_left && _left.view.superview) {
@@ -551,6 +566,7 @@
         _root.view.frame = frame;
     } completion:^(BOOL finished) {
         [_tap setEnabled:YES];
+        if (completion) completion();
     }];
     
     if (!animated) {

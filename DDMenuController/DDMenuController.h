@@ -72,8 +72,11 @@ typedef enum {
 
 - (void)setRootController:(UIViewController *)controller animated:(BOOL)animated; // used to push a new controller on the stack
 - (void)showRootController:(BOOL)animated; // reset to "home" view controller
+- (void)showRootController:(BOOL)animated completion:(dispatch_block_t)completion;
 - (void)showRightController:(BOOL)animated;  // show right
+- (void)showRightController:(BOOL)animated completion:(dispatch_block_t)completion;
 - (void)showLeftController:(BOOL)animated;  // show left
+- (void)showLeftController:(BOOL)animated completion:(dispatch_block_t)completion;
 
 @end
 
