@@ -4,6 +4,10 @@ Created by **Devin Doty**
 
 **DDMenuController** is a similar menu controller to the one found in Facebook and Path 2.0 on iOS. Allows for panning like Path 2.0, as well as a left or right view. Built using ARC, and currently supports iPhone and iPod Touch running iOS 5. 
 
+# Fork
+
+This fork, created by Steven Fisher, adds `showRootController:completion:`, `showLeftController:completion:` and `showRightController:completion:`.
+
 # Installation
 
 Just add DDMenuController.m/h into your project.
